@@ -1,0 +1,54 @@
+@use "normalize.scss";
+@use "var" as *;
+@use "theme" as *;
+@use "page-header" as *;
+@use "waves" as *;
+@use "home" as *;
+@use "about" as *;
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Overlock&display=swap");
+
+html {
+  @extend .normalize;
+  scroll-behavior: smooth;
+}
+* {
+  transition: background, color 0.5s linear;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  font-family: "Baloo Thambi 2", sans-serif;
+  @include waves;
+  .page-header {
+    @include page-header;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    > section {
+      padding: 0;
+      position: relative;
+      &:nth-child(even) {
+        margin: 50px 0;
+      }
+    }
+    #home {
+      @include home;
+    }
+    #about {
+      @include about;
+    }
+  }
+}
+.dark-mode {
+  @include mode(d);
+}
+.light-mode {
+  @include mode(l);
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    @include mode(d);
+  }
+}

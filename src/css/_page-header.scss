@@ -1,0 +1,182 @@
+@use "var" as *;
+@mixin page-header {
+  font-size: clamp(0.8rem, 2vw, 2rem);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  background-color: $primary;
+  @media (max-width: 480px) {
+    background-color: transparent;
+  }
+  display: flex;
+  justify-content: flex-end;
+  a {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
+  .toggle-theme {
+    padding-right: 0.3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    > span {
+      cursor: default;
+    }
+    .toggle-theme-checkbox {
+      opacity: 0;
+      position: absolute;
+    }
+    .label {
+      width: 3rem;
+      height: 1.5rem;
+      display: flex;
+      border-radius: 50px;
+      align-items: center;
+      cursor: pointer;
+      justify-content: space-between;
+      padding: 3px;
+      position: relative;
+      transform: scale(0.8);
+    }
+
+    .ball {
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      border-radius: 50%;
+      transition: transform 0.2s linear;
+    }
+
+    /*  target the elemenent after the label*/
+    .toggle-theme-checkbox:checked + .label .ball {
+      transform: translateX(calc(1.5rem + 3px));
+    }
+  }
+
+  .header-nav {
+    padding: 0.5rem;
+    @media (min-width: 481px) {
+      #menuToggle {
+        margin: auto;
+        input {
+          display: none;
+        }
+        ul {
+          display: flex;
+          list-style-type: none;
+          gap: 1vw;
+          margin: 0;
+          justify-content: flex-end;
+          align-items: center;
+        }
+      }
+    }
+    @media (max-width: 480px) {
+      margin-right: auto;
+      #menuToggle {
+        display: block;
+        position: relative;
+        top: 30px;
+        left: 30px;
+
+        -webkit-user-select: none;
+        user-select: none;
+        a {
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        input {
+          display: block;
+          width: 40px;
+          height: 32px;
+          position: absolute;
+          top: -7px;
+          left: -5px;
+
+          cursor: pointer;
+
+          opacity: 0; /* hide this */
+          z-index: 2; /* and place it over the hamburger */
+
+          -webkit-touch-callout: none;
+        }
+
+        > span {
+          display: block;
+          width: 33px;
+          height: 4px;
+          margin-bottom: 5px;
+          position: relative;
+
+          border-radius: 3px;
+
+          z-index: 1;
+
+          transform-origin: 4px 0px;
+
+          transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+            opacity 0.55s ease;
+        }
+        > span:first-child {
+          transform-origin: 0% 0%;
+        }
+
+        > span:nth-last-child(2) {
+          transform-origin: 0% 100%;
+        }
+
+        > input:checked ~ span {
+          opacity: 1;
+          transform: rotate(45deg) translate(-2px, -1px);
+        }
+
+        > input:checked ~ span:nth-last-child(3) {
+          opacity: 0;
+          transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        > input:checked ~ span:nth-last-child(2) {
+          transform: rotate(-45deg) translate(0, -1px);
+        }
+        > input:checked ~ ul {
+          transform: none;
+        }
+      }
+      #menu {
+        position: absolute;
+        width: 300px;
+        margin: -100px 0 0 -55px;
+        padding: 50px;
+        padding-top: 125px;
+        border-radius: 5px;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        > li {
+          padding: 10px 0;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
