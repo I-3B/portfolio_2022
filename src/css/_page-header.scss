@@ -98,7 +98,8 @@
 
         -webkit-user-select: none;
         user-select: none;
-        a {
+        a,
+        span {
           text-decoration: none;
           transition: color 0.3s ease;
         }

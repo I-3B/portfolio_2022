@@ -1,5 +1,8 @@
 @use "var" as *;
 @mixin mode($theme) {
+  * {
+    color: map-get($map: $theme-colors, $key: "text-" + $theme);
+  }
   background-color: map-get($map: $theme-colors, $key: "bg-" + $theme);
   a {
     &::before {
@@ -7,7 +10,7 @@
     }
   }
   main {
-    section {
+    > section {
       background-color: map-get($map: $theme-colors, $key: "bg-" + $theme);
       &:nth-child(even) {
         background-color: map-get($map: $theme-colors, $key: "bg1-" + $theme);
@@ -20,7 +23,10 @@
     }
     @media (max-width: 480px) {
       #menu {
-        background-color: map-get($map: $theme-colors, $key: "bg1-" + $theme);
+        background-color: map-get($map: $theme-colors, $key: "bg2-" + $theme);
+        @if $theme == "l" {
+          box-shadow: 1px 1px 20px 0px black;
+        }
       }
       #menuToggle > input:checked ~ span {
         background: map-get($map: $theme-colors, $key: "text-" + $theme);
