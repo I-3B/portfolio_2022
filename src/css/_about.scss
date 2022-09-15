@@ -1,8 +1,5 @@
 @mixin about {
-  padding: 1em;
-  h3 {
-    font-size: clamp(2em, 2vw, 3em);
-  }
+
   p {
     font-size: clamp(1.3em, 1.5vw, 2.4em);
     margin: auto;

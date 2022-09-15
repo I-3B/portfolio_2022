@@ -15,6 +15,15 @@ const toggleTheme = () => (!body.classList.contains("dark-mode") ? addDarkMode()
 
 const checkPreference = () => (preferenceQuery.matches ? addDarkMode() : addLightMode());
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        entry.target.classList.toggle("show", entry.isIntersecting);
+    });
+});
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((e) => {
+    observer.observe(e);
+});
 toggleThemeCheckbox.addEventListener("change", toggleTheme);
 preferenceQuery.addEventListener("change", checkPreference);
 window.addEventListener("DOMContentLoaded", checkPreference);

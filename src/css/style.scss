@@ -5,6 +5,8 @@
 @use "waves" as *;
 @use "home" as *;
 @use "about" as *;
+@use "skills" as *;
+
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Overlock&display=swap");
 
 html {
@@ -12,7 +14,7 @@ html {
   scroll-behavior: smooth;
 }
 * {
-  transition: background, color 0.5s linear;
+  transition: color 0.5s linear;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
@@ -27,8 +29,14 @@ body {
     display: flex;
     flex-direction: column;
     > section {
-      padding: 0;
       position: relative;
+      padding: 1em;
+      * {
+        font-size: clamp(1rem, 2vw, 4rem);
+      }
+      h3 {
+        font-size: clamp(2rem, 3vw, 6rem);
+      }
       &:nth-child(even) {
         margin: 50px 0;
       }
@@ -39,8 +47,43 @@ body {
     #about {
       @include about;
     }
+    #skills {
+      @include skills;
+    }
   }
 }
+.hidden {
+  &,
+  > * {
+    transition: all 1s;
+    opacity: 0;
+  }
+  filter: blur(2px);
+  transform: translateY(40%);
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+}
+.animate-cards {
+  transform: translate(0);
+  li {
+    transform: translateX(-100%);
+    @for $i from 0 through 20 {
+      &:nth-child(#{$i}) {
+        transition-delay: calc(20ms * $i);
+      }
+    }
+  }
+}
+.show {
+  &,
+  * {
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0) !important;
+  }
+}
+
 .dark-mode {
   @include mode(d);
 }
