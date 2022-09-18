@@ -6,6 +6,7 @@
 @use "home" as *;
 @use "about" as *;
 @use "skills" as *;
+@use "projects" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Overlock&display=swap");
 
@@ -50,6 +51,9 @@ body {
     #skills {
       @include skills;
     }
+    #projects {
+      @include projects;
+    }
   }
 }
 .hidden {
@@ -67,9 +71,9 @@ body {
 .animate-cards {
   transform: translate(0);
   li {
-    transform: translateX(-100%);
-    @for $i from 0 through 20 {
+    @for $i from 1 through 20 {
       &:nth-child(#{$i}) {
+        transform: translateX(-100% * $i);
         transition-delay: calc(20ms * $i);
       }
     }

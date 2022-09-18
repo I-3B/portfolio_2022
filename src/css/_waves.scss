@@ -12,7 +12,7 @@
   }
   div[class^="custom-shape-divider-bottom"] {
     position: absolute;
-    bottom: -47;
+    bottom: -47px;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -29,5 +29,17 @@
 
   .custom-shape-divider-bottom-1663006863 svg {
     width: calc(150% + 1.3px) !important;
+  }
+  .custom-shape-divider-top-222 {
+    transform: scale(-1, -1) !important;
+    svg {
+      width: calc(100% + 1.3px) !important;
+    }
+  }
+  .custom-shape-divider-bottom-222 {
+    transform: scale(1, -1) !important;
+    svg {
+      width: calc(150% + 1.3px) !important;
+    }
   }
 }

@@ -1,3 +1,4 @@
+@use "var" as *;
 @mixin skills {
   h3 {
     margin-top: 2rem;
@@ -19,12 +20,14 @@
         transition: 0.3s all linear;
       }
       img {
-        border-radius: 5px;
+        border-radius: 2px;
         width: 100%;
         height: fit-content;
       }
       span {
         display: flex;
+        border: 2px solid $primary;
+        border-radius: 10px;
         opacity: 0;
         position: absolute;
         width: 100%;
