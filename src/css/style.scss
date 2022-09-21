@@ -7,6 +7,7 @@
 @use "about" as *;
 @use "skills" as *;
 @use "projects" as *;
+@use "contact" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Overlock&display=swap");
 
@@ -19,22 +20,23 @@ html {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+
 body {
   margin: 0;
   font-family: "Baloo Thambi 2", sans-serif;
+
   @include waves;
   .page-header {
     @include page-header;
   }
   main {
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
     > section {
       position: relative;
       padding: 1em;
-      * {
-        font-size: clamp(1rem, 2vw, 4rem);
-      }
       h3 {
         font-size: clamp(2rem, 3vw, 6rem);
       }
@@ -54,6 +56,9 @@ body {
     #projects {
       @include projects;
     }
+    #contact {
+      @include contact;
+    }
   }
 }
 .hidden {
@@ -68,6 +73,18 @@ body {
     transition: none;
   }
 }
+.from-left {
+  transform: translateX(-20%);
+}
+.from-right {
+  transform: translateX(20%);
+}
+.from-left-long {
+  transform: translateX(-100%);
+}
+.from-right-long {
+  transform: translateX(100%);
+}
 .animate-cards {
   transform: translate(0);
   li {
@@ -79,7 +96,20 @@ body {
     }
   }
 }
+.animate-cards-right {
+  flex-direction: row-reverse !important;
+  li {
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        transform: translateX(100% * $i);
+        transition-delay: calc(20ms * $i);
+      }
+    }
+  }
+}
+
 .show {
+  overflow: initial;
   &,
   * {
     filter: blur(0);

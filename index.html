@@ -68,11 +68,14 @@
       <p class="hidden">I'm Islam, a web developer, and a IT engineering student.</p>
       <ul>
         <li class="hidden"> Currently looking for a job (or internship) to gain
-          more experience.</li>
-        <li class="hidden"> I love learning new skills and applying them in projects.</li>
-        <li class="hidden"> Interested in
-          JavaScript
-          ecosystem</li>
+          more experience.
+        </li>
+        <li class="hidden">Open to learn new languages and frameworks.</li>
+        <li class="hidden">I currently do my projects with Express.js for the backend and React for the front end (MERN
+          stack) </li>
+        <li class="hidden">
+          Interested in JavaScript ecosystem.
+        </li>
       </ul>
 
 
@@ -90,21 +93,30 @@
         <h4 class="hidden">Languages, libraries and frameworks</h4>
         <ul class="hidden animate-cards">
           <li><img src="/assets/images/html5.png" alt="HTML5"><span>HTML5</span></li>
-          <li><img src="/assets/images/javascript.png" alt="JavaScript"><span>JavaScript</span></li>
           <li><img src="/assets/images/css3.png" alt="CSS3"><span>CSS</span></li>
+          <li><img src="/assets/images/sass.png" alt="SASS"><span>SASS</span></li>
+          <li><img src="/assets/images/javascript.png" alt="JavaScript"><span>JavaScript</span></li>
+          <li><img src="/assets/images/typescript.png" alt="TypeScript"><span>TypeScript</span></li>
           <li><img src="/assets/images/express.png" alt="Express.js"><span>Express.js</span></li>
           <li><img src="/assets/images/mongodb.png" alt="MongoDB"><span>MongoDB</span></li>
-          <li><img src="/assets/images/git.png" alt="Git"><span>Git</span></li>
-          <li><img src="/assets/images/jest.png" alt="Jest"><span>Jest</span></li>
+          <li><img src="/assets/images/react.png" alt="React"><span>React</span></li>
           <li><img src="/assets/images/nodejs.png" alt="Node.js"><span>Node.js</span></li>
-          <li><img src="/assets/images/github.png" alt="GitHub"><span>GitHub</span></li>
-          <li><img src="/assets/images/npm.png" alt="NPM"><span>NPM</span></li>
+          <li><img src="/assets/images/jest.png" alt="Jest"><span>Jest</span></li>
           <li><img src="/assets/images/mongoose.png" alt="mongoose"><span>Mongoose</span></li>
           <li><img src="/assets/images/passportjs.png" alt="Passport.js"><span>Passport.js</span></li>
           <li><img src="/assets/images/pug.png" alt="Pug"><span>Pug</span></li>
-          <li><img src="/assets/images/react.png" alt="React"><span>React</span></li>
-          <li><img src="/assets/images/sass.png" alt="SASS"><span>SASS</span></li>
-          <li><img src="/assets/images/typescript.png" alt="TypeScript"><span>TypeScript</span></li>
+        </ul>
+      </section>
+      <section>
+        <h4 class="hidden">Tools</h4>
+        <ul class="hidden animate-cards">
+          <li><img src="/assets/images/git.png" alt="Git"><span>Git</span></li>
+          <li><img src="/assets/images/github.png" alt="GitHub"><span>GitHub</span></li>
+          <li><img src="/assets/images/vscode.png" alt="CSS3"><span>Visual Studio Code</span></li>
+          <li><img src="/assets/images/ubuntu.png" alt="JavaScript"><span>Ubuntu (WSL)</span></li>
+          <li><img src="/assets/images/windows10.png" alt="HTML5"><span>Windows 10</span></li>
+          <li><img src="/assets/images/postman.png" alt="Express.js"><span>Postman</span></li>
+          <li><img src="/assets/images/npm.png" alt="NPM"><span>NPM</span></li>
         </ul>
       </section>
     </section>
@@ -116,12 +128,12 @@
             class="shape-fill"></path>
         </svg>
       </div>
-      <h3>Projects</h3>
+      <h3 class="hidden">Projects</h3>
       <div class="projects-list">
-        <article class="project">
+        <article class="project hidden from-left">
           <div class="about">
-            <h4>PurpleBook</h4>
-            <ul class="stack">
+            <h4 class="hidden">PurpleBook</h4>
+            <ul class="hidden animate-cards stack">
               <li>Express.js</li>
               <li>MongoDB</li>
               <li>Jest</li>
@@ -129,87 +141,186 @@
               <li>SASS</li>
               <li>TypeScript</li>
             </ul>
-            <p>A Facebook clone application. I built it with Express and MongoDB for the backend and React for the
-              frontend, I used
-              Typescript for both. It was the final project for theodinproject.com full-stack JavaScript course, the
-              task
-              was just to
-              build a Facebook with the core features (posts, likes, comments, friends).
+            <p>a Facebook clone with the core features (posts, likes, comments, friends) It took me a lot of time
+              because of college exams
+              and other stuff.
+              I learned a lot in this project, those are some points:
             </p>
+            <h5>for the backend:</h5>
+            <ul>
+              <li>first time using Typescript for backend, it helped a lot and I will never use untyped JavaScript
+                again.
+              </li>
+              <li>
+                first time I write tests for an API (around 200 test) and I think I will never write an API without
+                tests
+                in the future.
+              </li>
+              <li>I used Oauth2 (login with Facebook).</li>
+              <li>
+                I got better in writing MongoDB queries (friend recommendations was kind of challenging).
+              </li>
+            </ul>
+            <h5>for the frontend:</h5>
+            <ul>
+              <li>
+                I tried to make components reusable as often as I can (cards, buttons, a hook for paged lists).
+              </li>
+              <li>I used more SCSS features (extending classes, variables, partials).</li>
+              <li>I used useRef hook for passing data between components.</li>
+              <li>
+                I wrote Typescripts interfaces to easy consuming the API and It
+                benefited
+                me a good
+                deal.
+              </li>
+            </ul>
+            <p>By far this was the most educational project I've done.</p>
+            <div class="project-links">
+              <a href="https://github.com/I-3B/PurpleBook-API">
+                <img src="/assets/images/github_transparent.png" alt="">
+                <span>Code</span>
+              </a>
+              <a href="https://purplebook-i3b.onrender.com/">
+                <img src="/assets/images/web.png" alt="">
+                <span>Live</span>
+              </a>
+            </div>
           </div>
           <div class="demos">
             <a href="/assets/images/pb1.jpg" target="_blank" title="Feed page">
               <img src="/assets/images/pb1.jpg" alt="PurpleBook feed demo">
             </a>
-            <a href="/assets/images/pb2.jpg" target="_blank" title="Post's comments">
-              <img src="/assets/images/pb2.jpg" alt="PurpleBook comments demo">
+            <a href="/assets/images/pb2.jpg" target="_blank" title="User profile">
+              <img src="/assets/images/pb2.jpg" alt="user profile page demo">
             </a>
             <a href="/assets/images/pb3.jpg" target="_blank" title="Friends requests and recommendations">
               <img src="/assets/images/pb3.jpg" alt="PurpleBook friends page demo">
+            </a>
+            <a href="/assets/images/pb4.jpg" target="_blank" title="Post's comments">
+              <img src="/assets/images/pb4.jpg" alt="PurpleBook comments demo">
             </a>
           </div>
         </article>
-        <article class="project">
+        <article class="project hidden from-right">
           <div class="about">
-            <h4>PurpleBook</h4>
-            <ul class="stack">
+            <h4>Personal blog</h4>
+            <ul class="stack hidden animate-cards-right">
               <li>Express.js</li>
               <li>MongoDB</li>
-              <li>Jest</li>
               <li>React</li>
               <li>SASS</li>
-              <li>TypeScript</li>
+              <li>TypeScript (FE)</li>
             </ul>
-            <p>A Facebook clone application. I built it with Express and MongoDB for the backend and React for the
-              frontend, I used
-              Typescript for both. It was the final project for theodinproject.com full-stack JavaScript course, the
-              task
-              was just to
-              build a Facebook with the core features (posts, likes, comments, friends).
+            <p>Very basic blog, with the ability to publish, edit and hide a post only for admins.
             </p>
+            <h5>What I learned:</h5>
+            <ul>
+              <li>First time building an API.</li>
+              <li>Used JWT authentication for the API, of course not all features required the user to be logged in.
+              </li>
+              <li>First time using routes authorization in react and what a user can see.</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/I-3B/blog-API">
+                <img src="/assets/images/github_transparent.png" alt="">
+                <span>Code</span>
+              </a>
+              <a href="https://blog-i3b.onrender.com/">
+                <img src="/assets/images/web.png" alt="">
+                <span>Live</span>
+              </a>
+            </div>
           </div>
           <div class="demos">
-            <a href="/assets/images/pb1.jpg" target="_blank" title="Feed page">
-              <img src="/assets/images/pb1.jpg" alt="PurpleBook feed demo">
+            <a href="/assets/images/blog1.jpg" target="_blank" title="Main page">
+              <img src="/assets/images/blog1.jpg" alt="Main page demo">
             </a>
-            <a href="/assets/images/pb2.jpg" target="_blank" title="Post's comments">
-              <img src="/assets/images/pb2.jpg" alt="PurpleBook comments demo">
+            <a href="/assets/images/blog2.jpg" target="_blank" title="Admin dashboard">
+              <img src="/assets/images/blog2.jpg" alt="Admin dashboard demo">
             </a>
-            <a href="/assets/images/pb3.jpg" target="_blank" title="Friends requests and recommendations">
-              <img src="/assets/images/pb3.jpg" alt="PurpleBook friends page demo">
+            <a href="/assets/images/blog3.jpg" target="_blank" title="A post">
+              <img src="/assets/images/blog3.jpg" alt="post demo">
             </a>
           </div>
         </article>
-        <article class="project">
+        <article class="project hidden from-left">
           <div class="about">
-            <h4>PurpleBook</h4>
-            <ul class="stack">
+            <h4>Members only</h4>
+            <ul class="stack hidden animate-cards">
               <li>Express.js</li>
               <li>MongoDB</li>
-              <li>Jest</li>
-              <li>React</li>
-              <li>SASS</li>
-              <li>TypeScript</li>
+              <li>CSS</li>
+              <li>Pug</li>
+              <li>JavaScript</li>
             </ul>
-            <p>A Facebook clone application. I built it with Express and MongoDB for the backend and React for the
-              frontend, I used
-              Typescript for both. It was the final project for theodinproject.com full-stack JavaScript course, the
-              task
-              was just to
-              build a Facebook with the core features (posts, likes, comments, friends).
+            <p>A chat board, this project focus was on authentication and authorization.
+              as a user have four types of privilege (not-logged-in, logged-in, member, admin)
             </p>
+            <h5>What I learned:</h5>
+            <ul>
+              <li>First time using Passport.js library.</li>
+              <li>showing different view for every type of authorization.</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/I-3B/members-only">
+                <img src="/assets/images/github_transparent.png" alt="">
+                <span>Code</span>
+              </a>
+              <a href="https://chatroom-i3b.onrender.com/">
+                <img src="/assets/images/web.png" alt="">
+                <span>Live</span>
+              </a>
+            </div>
           </div>
           <div class="demos">
-            <a href="/assets/images/pb1.jpg" target="_blank" title="Feed page">
-              <img src="/assets/images/pb1.jpg" alt="PurpleBook feed demo">
+            <a href="/assets/images/chatroom1.jpg" target="_blank" title="without login">
+              <img src="/assets/images/chatroom1.jpg" lowsrc="" alt="without login demo">
             </a>
-            <a href="/assets/images/pb2.jpg" target="_blank" title="Post's comments">
-              <img src="/assets/images/pb2.jpg" alt="PurpleBook comments demo">
+            <a href="/assets/images/chatroom2.jpg" target="_blank" title="logged in">
+              <img src="/assets/images/chatroom2.jpg" alt="logged in demo">
             </a>
-            <a href="/assets/images/pb3.jpg" target="_blank" title="Friends requests and recommendations">
-              <img src="/assets/images/pb3.jpg" alt="PurpleBook friends page demo">
+            <a href="/assets/images/chatroom3.jpg" target="_blank" title="member">
+              <img src="/assets/images/chatroom3.jpg" alt="member demo">
             </a>
           </div>
+        </article>
+        <article class="project hidden from-right">
+          <div class="about">
+            <h4>Where is Waldo</h4>
+            <ul class="stack hidden animate-cards-right">
+              <li>React</li>
+              <li>Firebase</li>
+              <li>TypeScript</li>
+              <li>CSS</li>
+            </ul>
+            <p>Character searching game. connected to Firebase to verify characters position and storing users' records.
+            </p>
+            <h5>What I learned:</h5>
+            <ul>
+              <li>First time using Firebase, it was very simple interaction with so I am familiar with it at best.</li>
+              <li>I improved my problem solving skills to a degree in this project, as I needed to think of a way for
+                saving
+                the location for each character and how to verify it. </li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/I-3B/Where-is-Waldo">
+                <img src="/assets/images/github_transparent.png" alt="">
+                <span>Code</span>
+              </a>
+              <a href="https://i-3b.github.io/Where-is-Waldo/">
+                <img src="/assets/images/web.png" alt="">
+                <span>Live</span>
+              </a>
+            </div>
+          </div>
+          <div class="demos">
+            <a href="/assets/images/wiw1.jpg" target="_blank" title="Feed page">
+              <img src="/assets/images/wiw1.jpg" lowsrc="" alt="PurpleBook feed demo">
+            </a>
+            <a href="/assets/images/wiw2.jpg" target="_blank" title="Post's comments">
+              <img src="/assets/images/wiw2.jpg" alt="PurpleBook comments demo">
+            </a>
         </article>
         <div class="custom-shape-divider-bottom-222">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -221,7 +332,46 @@
       </div>
     </section>
     <section id="contact">
-      <div></div>
+      <section class="hidden from-right-long">
+        <h4>Contact me on:</h4>
+        <ul>
+          <li>
+            <a href="mailto:islamnaasani@gmail.com" target="_blank">
+              <img src="/assets/images/gmail.png" alt="express">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/islam-nassani-994a32194" target="_blank">
+              <img src="/assets/images/linkedin.png" alt="express">
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/islam_naasani" target="_blank">
+              <img src="/assets/images/telegram.png" alt="express">
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="hidden from-left-long">
+        <h4>You can find me also on:</h4>
+        <ul>
+          <li>
+            <a href="https://github.com/I-3B" target="_blank">
+              <img src="/assets/images/github.png" alt="express">
+            </a>
+          </li>
+          <li>
+            <a href="https://leetcode.com/islamnaasani/" target="_blank">
+              <img src="/assets/images/leetcode.png" alt="express">
+            </a>
+          </li>
+          <li>
+            <a href="https://stackoverflow.com/users/14283533/i3b" target="_blank">
+              <img src="/assets/images/stackoverflow.png" alt="express">
+            </a>
+          </li>
+        </ul>
+      </section>
     </section>
   </main>
 </body>
