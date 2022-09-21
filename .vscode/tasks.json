@@ -5,7 +5,7 @@
     "tasks": [
         {
             "label": "watch",
-            "command": "chrome http://localhost:3000/ & sass --watch src/css/style.scss dist/style.css & tsc -w & browser-sync . -w  --no-notify && bg ",
+            "command": "sass --watch src/css/style.scss dist/style.css & tsc -w & browser-sync . -w  --no-notify && bg ",
             "args": [],
             "type": "shell",
             "problemMatcher": []
