@@ -454,10 +454,10 @@ body .page-header .toggle-theme .toggle-theme-checkbox:checked + .label .ball {
 body .page-header .header-nav {
   padding: 0.5rem;
 }
-body .page-header .header-nav * {
-  color: #eee;
-}
 @media (min-width: 481px) {
+  body .page-header .header-nav * {
+    color: #eee;
+  }
   body .page-header .header-nav #menuToggle {
     margin: auto;
   }
