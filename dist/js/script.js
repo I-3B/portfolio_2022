@@ -6,9 +6,14 @@ var preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
 var themeLS = localStorage.getItem("theme");
 var images = document.querySelectorAll("img");
 images.forEach(function (img) {
-    var src = img.src;
-    img.src = "/assets/images/loading.svg";
-    img.onload = function () { return (img.src = src); };
+    if (!img.complete) {
+        img.style.backgroundImage = "url(/assets/images/loading.svg)";
+        img.style.setProperty("object-position", "-99999px 99999px");
+    }
+    img.onload = function () {
+        img.style.setProperty("object-position", "initial");
+        img.style.backgroundImage = "";
+    };
 });
 var addDarkMode = function () {
     body.classList.remove("light-mode");
