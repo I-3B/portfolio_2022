@@ -68,7 +68,7 @@ body {
 .hidden {
   &,
   > * {
-    transition: all 1s;
+    transition: all 1s, background-color 0s;
     opacity: 0;
   }
   filter: blur(2px);

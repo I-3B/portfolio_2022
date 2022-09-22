@@ -712,7 +712,7 @@ body main #contact > section ul li a img {
 }
 .hidden,
 .hidden > * {
-  transition: all 1s;
+  transition: all 1s, background-color 0s;
   opacity: 0;
 }
 @media (prefers-reduced-motion) {
