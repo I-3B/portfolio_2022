@@ -20,7 +20,11 @@ html {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
-
+img {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
 body {
   margin: 0;
   font-family: "Baloo Thambi 2", sans-serif;

@@ -6,9 +6,14 @@ const preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const themeLS = localStorage.getItem("theme");
 const images = document.querySelectorAll("img") as NodeListOf<HTMLImageElement>;
 images.forEach((img) => {
-    const src = img.src;
-    img.src = "/assets/images/loading.svg";
-    img.onload = () => (img.src = src);
+    if (!img.complete) {
+        img.style.backgroundImage = "url(/assets/images/loading.svg)";
+        img.style.setProperty("object-position", "-99999px 99999px");
+    }
+    img.onload = () => {
+        img.style.setProperty("object-position", "initial");
+        img.style.backgroundImage = "";
+    };
 });
 const addDarkMode = () => {
     body.classList.remove("light-mode");
