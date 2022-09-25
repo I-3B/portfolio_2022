@@ -9,11 +9,12 @@ var images = document.querySelectorAll("img");
 var prevScrollPos = window.pageYOffset;
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
+    var headerHight = pageHeader.offsetHeight;
     if (prevScrollPos > currentScrollPos) {
         pageHeader.style.top = "0";
     }
-    else {
-        pageHeader.style.top = "-100px";
+    else if (!headerMenuCheckBox.checked) {
+        pageHeader.style.top = "-" + (10 + headerHight) + "px";
     }
     prevScrollPos = currentScrollPos;
 };
@@ -38,10 +39,7 @@ var addLightMode = function () {
     localStorage.setItem("theme", "light");
 };
 headerMenu.addEventListener("click", function (e) {
-    var el = e.target;
-    if (el.tagName === "A") {
-        headerMenuCheckBox.checked = false;
-    }
+    headerMenuCheckBox.checked = false;
 });
 var toggleTheme = function () { return (!body.classList.contains("dark-mode") ? addDarkMode() : addLightMode()); };
 var checkPreference = function () {
