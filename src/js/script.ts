@@ -1,10 +1,21 @@
 const body = document.body;
 const toggleThemeCheckbox = document.querySelector(".toggle-theme-checkbox") as HTMLInputElement;
+const pageHeader = document.querySelector(".page-header") as HTMLElement;
 const headerMenu = document.querySelector("#menu");
 const headerMenuCheckBox = document.querySelector("#menuToggle>input") as HTMLInputElement;
 const preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const themeLS = localStorage.getItem("theme");
 const images = document.querySelectorAll("img") as NodeListOf<HTMLImageElement>;
+let prevScrollPos = window.pageYOffset;
+window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        pageHeader.style.top = "0";
+    } else {
+        pageHeader.style.top = "-100px";
+    }
+    prevScrollPos = currentScrollPos;
+};
 images.forEach((img) => {
     if (!img.complete) {
         img.style.backgroundImage = "url(/assets/images/loading.svg)";

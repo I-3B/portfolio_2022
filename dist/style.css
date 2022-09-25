@@ -264,6 +264,7 @@ body .page-header {
   width: 100%;
   z-index: 10;
   top: 0;
+  transition: top 0.2s;
   background-color: #6300f8;
   display: flex;
   justify-content: flex-end;

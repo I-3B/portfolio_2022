@@ -1,10 +1,22 @@
 var body = document.body;
 var toggleThemeCheckbox = document.querySelector(".toggle-theme-checkbox");
+var pageHeader = document.querySelector(".page-header");
 var headerMenu = document.querySelector("#menu");
 var headerMenuCheckBox = document.querySelector("#menuToggle>input");
 var preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
 var themeLS = localStorage.getItem("theme");
 var images = document.querySelectorAll("img");
+var prevScrollPos = window.pageYOffset;
+window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        pageHeader.style.top = "0";
+    }
+    else {
+        pageHeader.style.top = "-100px";
+    }
+    prevScrollPos = currentScrollPos;
+};
 images.forEach(function (img) {
     if (!img.complete) {
         img.style.backgroundImage = "url(/assets/images/loading.svg)";
