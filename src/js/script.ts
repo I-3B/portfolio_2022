@@ -8,11 +8,12 @@ const themeLS = localStorage.getItem("theme");
 const images = document.querySelectorAll("img") as NodeListOf<HTMLImageElement>;
 let prevScrollPos = window.pageYOffset;
 window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
+    let currentScrollPos = window.pageYOffset;
+    const headerHight = pageHeader.offsetHeight;
     if (prevScrollPos > currentScrollPos) {
         pageHeader.style.top = "0";
-    } else {
-        pageHeader.style.top = "-100px";
+    } else if (!headerMenuCheckBox.checked) {
+        pageHeader.style.top = `-${10 + headerHight}px`;
     }
     prevScrollPos = currentScrollPos;
 };
@@ -39,10 +40,7 @@ const addLightMode = () => {
 };
 
 headerMenu.addEventListener("click", (e) => {
-    const el = e.target as HTMLElement;
-    if (el.tagName === "A") {
-        headerMenuCheckBox.checked = false;
-    }
+    headerMenuCheckBox.checked = false;
 });
 const toggleTheme = () => (!body.classList.contains("dark-mode") ? addDarkMode() : addLightMode());
 
