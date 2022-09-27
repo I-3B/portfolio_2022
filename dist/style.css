@@ -673,6 +673,30 @@ body main #projects .projects-list article .demos a:first-child {
 body main #projects .projects-list article .demos a:not(:first-child) {
   flex: 1;
 }
+body main #projects .show-more-projects {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  padding: 0.5rem;
+  gap: 0.3rem;
+  background-color: #6300f8;
+  border-radius: 5px;
+  text-decoration: none;
+}
+body main #projects .show-more-projects span {
+  color: #eee;
+}
+body main #projects .show-more-projects img {
+  width: 2.5rem;
+  filter: invert(0.9);
+}
+body main #projects .show-more-projects .arrow {
+  transition: font-size 0.3s;
+}
+body main #projects .show-more-projects:hover .arrow {
+  font-size: 2rem;
+}
 body main #contact {
   display: flex;
   flex-direction: column;

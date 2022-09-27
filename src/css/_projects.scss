@@ -98,8 +98,34 @@
 
         a:not(:first-child) {
           flex: 1;
-          // flex-basis: 45%;
         }
+      }
+    }
+  }
+  .show-more-projects {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    padding: 0.5rem;
+    gap: 0.3rem;
+    background-color: $primary;
+    border-radius: 5px;
+    text-decoration: none;
+    span {
+      color: map-get($map: $theme-colors, $key: "text-d");
+    }
+    img {
+      width: 2.5rem;
+      filter: invert(0.9);
+    }
+    .arrow {
+      transition: font-size 0.3s;
+    }
+
+    &:hover {
+      .arrow {
+        font-size: 2rem;
       }
     }
   }
