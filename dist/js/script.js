@@ -6,6 +6,7 @@ var headerMenuCheckBox = document.querySelector("#menuToggle>input");
 var preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
 var themeLS = localStorage.getItem("theme");
 var images = document.querySelectorAll("img");
+var logoAnchor = document.querySelector(".logo");
 var prevScrollPos = window.pageYOffset;
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
@@ -40,6 +41,11 @@ var addLightMode = function () {
 };
 headerMenu.addEventListener("click", function (e) {
     headerMenuCheckBox.checked = false;
+});
+logoAnchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.history.replaceState(undefined, undefined, window.location.origin);
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
 var toggleTheme = function () { return (!body.classList.contains("dark-mode") ? addDarkMode() : addLightMode()); };
 var checkPreference = function () {

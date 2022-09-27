@@ -259,7 +259,7 @@ body .custom-shape-divider-bottom-222 svg {
   width: calc(150% + 1.3px) !important;
 }
 body .page-header {
-  font-size: clamp(0.8rem, 2vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -267,26 +267,6 @@ body .page-header {
   transition: top 0.2s;
   background-color: #6300f8;
   display: flex;
-  justify-content: flex-end;
-}
-body .page-header a {
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-}
-body .page-header a::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-body .page-header a:hover::before {
-  transform: scaleX(1);
 }
 body .page-header .toggle-theme {
   padding-right: 0.3rem;
@@ -326,15 +306,43 @@ body .page-header .toggle-theme .toggle-theme-checkbox:checked + .label .ball {
   transform: translateX(calc(1.5rem + 3px));
 }
 body .page-header .header-nav {
-  padding: 0.5rem;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 0.2rem;
 }
 body .page-header .header-nav * {
   color: #eee;
 }
+body .page-header .header-nav .logo {
+  height: 50px;
+  margin-right: auto;
+}
+body .page-header .header-nav .logo img {
+  max-height: 100%;
+}
+body .page-header .header-nav #menu a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+body .page-header .header-nav #menu a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+body .page-header .header-nav #menu a:hover::before {
+  transform: scaleX(1);
+}
 @media (min-width: 481px) {
-  body .page-header .header-nav #menuToggle {
-    margin: auto;
-  }
   body .page-header .header-nav #menuToggle input {
     display: none;
   }

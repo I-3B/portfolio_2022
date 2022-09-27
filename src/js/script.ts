@@ -6,6 +6,7 @@ const headerMenuCheckBox = document.querySelector("#menuToggle>input") as HTMLIn
 const preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const themeLS = localStorage.getItem("theme");
 const images = document.querySelectorAll("img") as NodeListOf<HTMLImageElement>;
+const logoAnchor = document.querySelector(".logo") as HTMLAnchorElement;
 let prevScrollPos = window.pageYOffset;
 window.onscroll = function () {
     let currentScrollPos = window.pageYOffset;
@@ -41,6 +42,11 @@ const addLightMode = () => {
 
 headerMenu.addEventListener("click", (e) => {
     headerMenuCheckBox.checked = false;
+});
+logoAnchor.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.history.replaceState(undefined, undefined, window.location.origin);
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
 const toggleTheme = () => (!body.classList.contains("dark-mode") ? addDarkMode() : addLightMode());
 

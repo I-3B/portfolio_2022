@@ -1,6 +1,6 @@
 @use "var" as *;
 @mixin page-header {
-  font-size: clamp(0.8rem, 2vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -8,26 +8,6 @@
   transition: top 0.2s;
   background-color: $primary;
   display: flex;
-  justify-content: flex-end;
-  a {
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-    &:hover::before {
-      transform: scaleX(1);
-    }
-  }
   .toggle-theme {
     padding-right: 0.3rem;
     position: relative;
@@ -69,13 +49,45 @@
   }
 
   .header-nav {
-    padding: 0.5rem;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 0.2rem;
     * {
       color: map-get($map: $theme-colors, $key: "text-d");
     }
+    .logo {
+      height: 50px;
+      margin-right: auto;
+      img {
+        max-height: 100%;
+      }
+    }
+    #menu {
+      a {
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
+        }
+        &:hover::before {
+          transform: scaleX(1);
+        }
+      }
+    }
     @media (min-width: 481px) {
       #menuToggle {
-        margin: auto;
         input {
           display: none;
         }
@@ -102,6 +114,7 @@
           text-decoration: none;
           transition: color 0.3s ease;
         }
+
         input {
           display: block;
           width: 40px;
