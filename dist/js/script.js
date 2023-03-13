@@ -7,6 +7,7 @@ var preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
 var themeLS = localStorage.getItem("theme");
 var images = document.querySelectorAll("img");
 var logoAnchor = document.querySelector(".logo");
+var isMobile = window.innerWidth <= 800 && window.innerHeight <= 600;
 var prevScrollPos = window.pageYOffset;
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
@@ -15,7 +16,7 @@ window.onscroll = function () {
         pageHeader.style.top = "0";
     }
     else if (!headerMenuCheckBox.checked) {
-        pageHeader.style.top = "-" + (10 + headerHight) + "px";
+        pageHeader.style.top = "-".concat(10 + headerHight, "px");
     }
     prevScrollPos = currentScrollPos;
 };
@@ -57,6 +58,9 @@ var observer = new IntersectionObserver(function (entries) {
     });
 });
 var hiddenElements = document.querySelectorAll(".hidden");
+if (isMobile) {
+    hiddenElements.forEach(function (e) { return e.classList.remove(".hidden"); });
+}
 hiddenElements.forEach(function (e) {
     observer.observe(e);
 });

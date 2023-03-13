@@ -1,14 +1,14 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "watch",
-            "command": "sass --watch src/css/style.scss dist/style.css & tsc -w & browser-sync . -w  --no-notify  & postcss dist/style.css -u autoprefixer -o dist/prefix.style.css -w && bg ",
-            "args": [],
-            "type": "shell",
-            "problemMatcher": []
-        }
-    ]
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "watch",
+      "command": "sass --watch src/css/style.scss dist/style.css & tsc -w & browser-sync . --port 1234 -w  --no-notify  & postcss dist/style.css -u autoprefixer -o dist/prefix.style.css -w && bg ",
+      "args": [],
+      "type": "shell",
+      "problemMatcher": []
+    }
+  ]
 }

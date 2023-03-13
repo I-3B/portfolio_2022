@@ -74,7 +74,7 @@ body {
   filter: blur(2px);
   transform: translateY(40%);
   @media (prefers-reduced-motion) {
-    transition: none;
+    transition: none !important;
   }
 }
 .from-left {
@@ -114,6 +114,9 @@ body {
 
 .show {
   overflow: initial;
+  @media screen and (max-width: 600px) {
+    transition: none;
+  }
   &,
   * {
     filter: blur(0);

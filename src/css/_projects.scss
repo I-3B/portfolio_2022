@@ -85,7 +85,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.2rem;
-
         img {
           height: 100%;
           width: 100%;
@@ -98,6 +97,14 @@
 
         a:not(:first-child) {
           flex: 1;
+        }
+      }
+      .demos-mobile {
+        justify-content: center;
+        a:first-child,
+        a:not(:first-child) {
+          flex: 0;
+          flex-basis: 24%;
         }
       }
     }
