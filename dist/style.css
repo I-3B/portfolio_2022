@@ -468,7 +468,8 @@ body main #home:after {
   }
 }
 body main #home h1,
-body main #home h2 {
+body main #home h2,
+body main #home p {
   z-index: 1;
   margin: 0;
   font-weight: 300;
@@ -953,6 +954,13 @@ body main #contact > section ul li a img {
 .dark-mode #home::before, .dark-mode #home::after {
   background-color: #2c2c2c;
 }
+.dark-mode #home .outdated-warning {
+  padding-top: 16px;
+}
+.dark-mode #home .outdated-warning,
+.dark-mode #home .outdated-warning * {
+  color: gold;
+}
 .dark-mode #about * {
   color: #eee;
 }
@@ -999,6 +1007,13 @@ body main #contact > section ul li a img {
 }
 .light-mode #home::before, .light-mode #home::after {
   background-color: #f4f4f4;
+}
+.light-mode #home .outdated-warning {
+  padding-top: 16px;
+}
+.light-mode #home .outdated-warning,
+.light-mode #home .outdated-warning * {
+  color: #856800;
 }
 .light-mode #about * {
   color: #2c2c2c;
@@ -1047,6 +1062,13 @@ body main #contact > section ul li a img {
   }
   body #home::before, body #home::after {
     background-color: #2c2c2c;
+  }
+  body #home .outdated-warning {
+    padding-top: 16px;
+  }
+  body #home .outdated-warning,
+  body #home .outdated-warning * {
+    color: gold;
   }
   body #about * {
     color: #eee;
