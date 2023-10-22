@@ -21,7 +21,7 @@ window.onscroll = function () {
 };
 images.forEach((img) => {
   if (!img.complete) {
-    img.style.backgroundImage = "url(/assets/images/loading.svg)";
+    img.style.backgroundImage = "url(assets/images/loading.svg)";
     img.style.setProperty("object-position", "-99999px 99999px");
   }
   img.onload = () => {
